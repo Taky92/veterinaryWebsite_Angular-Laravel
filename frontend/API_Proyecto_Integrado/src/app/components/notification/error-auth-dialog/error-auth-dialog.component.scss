@@ -1,0 +1,27 @@
+.error-dialog{
+    background-color: #f747475e;
+    margin: 0;
+    padding: 0;
+}
+
+.error-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.error-content{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+mat-dialog-actions{
+    justify-content: center;
+}
+
+.error-button{
+    background-color: white;
+    border: 1px solid black;
+    font-size: 1em;
+    color: black;
+}

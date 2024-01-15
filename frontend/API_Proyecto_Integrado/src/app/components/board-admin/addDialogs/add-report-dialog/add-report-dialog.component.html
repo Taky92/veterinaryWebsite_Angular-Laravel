@@ -1,0 +1,49 @@
+<div class="add-rep-dialog">
+  <h1>Añadir informe</h1>
+
+  <form [formGroup]="addReportForm" (ngSubmit)="onAddReport()" enctype="multipart/form-data">
+
+      <!-- Nombre -->
+      <mat-form-field>
+          <input matInput formControlName="name" placeholder="Nombre del informe" />
+          <mat-error *ngIf="name?.errors?.['required'] && name?.touched">
+              El nombre es obligatorio
+          </mat-error>
+      </mat-form-field>
+
+      <!-- PDF -->
+      <mat-form-field class="file">
+          <ngx-mat-file-input [formControl]="fileControl" name="pdf" [accept]="'application/pdf'" placeholder="Elige un archivo">
+              <mat-icon ngxMatFileInputIcon>folder</mat-icon>
+          </ngx-mat-file-input>
+          <mat-error *ngIf="fileControl?.errors?.['required'] && fileControl?.touched">
+              El pdf es obligatorio
+          </mat-error>
+      </mat-form-field>
+
+      <!-- Descripción -->
+      <mat-form-field>
+          <input matInput formControlName="description" placeholder="Descripción"/>
+          <mat-error *ngIf="description?.errors?.['required'] && description?.touched">
+              La descripción es obligatoria
+          </mat-error>
+      </mat-form-field>
+
+      <!-- Fecha -->
+      <mat-form-field class="datepicker">
+          <div>
+              <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Fecha" />
+              <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </div>
+          <mat-error *ngIf="date?.errors?.['required'] && !date?.value">
+              La fecha es obligatoria
+          </mat-error>
+      </mat-form-field>
+
+      <mat-card-actions>
+          <button class="add-button" mat-button type="submit" [disabled]="addReportForm.invalid">Añadir informe</button>
+          <button class="cancel-button" mat-button (click)="onCancel()">Cancelar</button>
+      </mat-card-actions>
+  </form>
+</div>

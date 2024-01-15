@@ -1,0 +1,23 @@
+.tab-group {
+    font-size: 1.4em;
+    font-weight: 500;
+    width: 40%;
+}
+
+.example-small-box,
+.example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+}
+
+mat-tab {
+    font-size: 2em;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -1,0 +1,12 @@
+<div class="title">
+    <div class="action">
+        <button mat-raised-button (click)="goBack()">Volver</button>
+    </div>
+    <h1>Lista de Usuarios</h1>
+    <div class="filter">
+        <mat-form-field>
+            <input matInput type="number" placeholder="Filtrar por teléfono" [(ngModel)]="phoneFilter">
+        </mat-form-field>
+    </div>
+</div>
+<app-user-accordion class="accordion" (addPetClick)="addPet($event)" [userList]="filterUsersByPhone(userList, phoneFilter)"></app-user-accordion>

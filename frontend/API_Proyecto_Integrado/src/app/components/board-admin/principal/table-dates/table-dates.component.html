@@ -1,0 +1,38 @@
+<div class="table-dates-admin">
+    <table mat-table [dataSource]="dataSource" matSort class="table">
+        <!-- Define las columnas dinámicamente -->
+        <ng-container class="table-col" *ngFor="let col of displayedColumns" matColumnDef="{{ col }}">
+          <th class="thead" mat-header-cell *matHeaderCellDef mat-sort-header>{{ col | translate }}</th>
+          <td mat-cell *matCellDef="let element">
+
+            <ng-container *ngIf="col === 'actions'">
+                <button mat-icon-button (click)="openDetails(element.idDate)">
+                  <mat-icon>visibility</mat-icon>
+                </button>
+                <button mat-icon-button (click)="deleteDate(element.idDate)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+            </ng-container>
+
+            <ng-container *ngIf="col !== 'idPet' && col !== 'reason'; else petNameCol">
+              {{ element[col] }}
+            </ng-container>
+            <ng-template #petNameCol>
+              <ng-container *ngIf="col === 'idPet'">
+                {{ element.idPet | namePet | async}}
+              </ng-container>
+              <ng-container *ngIf="col === 'reason'">
+                {{ element.reason | truncateText }}
+              </ng-container>
+            </ng-template>
+          </td>
+
+        </ng-container>
+        <!-- Definición de las filas -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <!-- el paginador -->
+    <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+  </div>

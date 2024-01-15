@@ -1,0 +1,55 @@
+<div class="add-med-dialog">
+    <h1>Añadir medicamento</h1>
+  
+    <form [formGroup]="addMedicamentForm">
+  
+        <!-- Nombre -->
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Medicamento" />
+          <mat-error *ngIf="name?.errors?.['required'] && name?.touched">
+            El nombre es obligatorio
+          </mat-error>
+        </mat-form-field>
+  
+      <!-- StartDate-->
+      <mat-form-field class="datepicker">
+        <div>
+          <input matInput [matDatepicker]="picker1" formControlName="startDate" placeholder="Fecha de inicio" />
+          <mat-datepicker-toggle [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </div>
+        <mat-error *ngIf="startDate?.errors?.['required'] && startDate?.touched">
+          La fecha de inicio es obligatoria
+        </mat-error>
+      </mat-form-field>
+
+        <!-- EndDate-->
+        <mat-form-field class="datepicker">
+            <div>
+                <input matInput [matDatepicker]="picker2" formControlName="endDate" placeholder="Fecha de fin" />
+                <mat-datepicker-toggle [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </div>
+            <mat-error *ngIf="endDate?.errors?.['required'] && endDate?.touched">
+                La fecha de fin es obligatoria
+            </mat-error>
+            <mat-error *ngIf="endDate?.errors?.['dateError']">
+                La fecha de fin no puede ser anterior a la fecha de inicio
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Treatment -->
+        <mat-form-field>
+            <input matInput formControlName="treatment" placeholder="Tratamiento" />
+            <mat-error *ngIf="treatment?.errors?.['required'] && treatment?.touched">
+                El tratamiento es obligatorio
+            </mat-error>
+        </mat-form-field>
+
+      </form>
+  
+      <mat-card-actions>
+        <button class="add-button" mat-button (click)="onAddMedicament()">Añadir medicamento</button>
+        <button class="cancel-button" mat-button (click)="onCancel()">Cancelar</button>
+      </mat-card-actions>
+  </div>  

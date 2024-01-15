@@ -1,0 +1,35 @@
+<div class="login-admin mat-elevation-z4">
+
+    <!-- Card del Veterinario -->
+    <mat-card>
+
+      <mat-card-content>
+        <!-- Formulario del Veterinario -->
+        <form [formGroup]="loginAdmin" (ngSubmit)="onSubmit()">
+
+          <!-- Numero de Socio -->
+          <mat-form-field>
+            <input matInput formControlName="username" placeholder="Usuario" />
+            <mat-error *ngIf="username?.errors?.['required'] && username?.touched">
+              El usuario es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Contraseña -->
+          <mat-form-field>
+            <input matInput formControlName="password" placeholder="Contraseña" type="password" />
+            <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
+              La contraseña es obligatoria
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions>
+            <button mat-button type="submit">Acceder</button>
+          </mat-card-actions>
+          
+        </form>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>

@@ -1,0 +1,29 @@
+<div class="carousel">
+    <div class="carousel-inner" [style.transform]="'translateX(' + translateValue + 'px)'">
+      <div class="carousel-item" *ngFor="let item of items; let i = index">
+        <img [src]="item.image" alt="{{ item.alt }}">
+        <div class="carousel-caption">
+          <h1>{{ item.description }}</h1>
+        </div>
+      </div>
+
+    </div>
+  
+    <div class="indicators">
+      <div
+        class="indicator"
+        *ngFor="let item of items; let i = index"
+        [class.active]="i === currentIndex"
+        (click)="goTo(i)"
+      ></div>
+    </div>
+  
+    <button mat-icon-button class="arrow prev" (click)="prev()">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <button mat-icon-button class="arrow next" (click)="next()">
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </button>
+  </div>
+  
+  

@@ -1,0 +1,33 @@
+<div class="card">
+    <mat-card class="card-pet">
+        <div class="card-header">
+            <mat-card-header class="header-title">
+                <mat-card-title class="card-title">{{pet.name | uppercase}}</mat-card-title>
+            </mat-card-header>
+            <hr size="2px" color="purple">
+        </div>
+        <div class="card-body">
+            <div class="card-image-content">
+                <div class="card-image">
+                    <ng-container class="image-pet" *ngIf="pet.photo !== 'pet.png'; else photoDefault">
+                        <img mat-card-image src={{pet.photo}} alt="Photo pet">
+                    </ng-container>
+                    <ng-template class="image-pet" #photoDefault>
+                        <img mat-card-image src="./../../../../assets/images/pet.png" alt="Photo pet">
+                    </ng-template>
+                </div>
+            </div>
+
+            <mat-card-content class="card-content">
+                <span> <strong>Especie:</strong> {{pet.species | translate}} </span>
+                <span> <strong>Sexo:</strong> {{pet.gender | translate}} </span>
+                <span> <strong>Fecha de Nacimiento:</strong> {{pet.birthdate}} </span>
+            </mat-card-content>
+            
+            <mat-card-actions class="card-actions">
+              <button mat-button (click)="onUpdatePet()" >Editar mascota</button>
+              <button mat-button (click)="onDeletePet()">Dar de baja</button>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>

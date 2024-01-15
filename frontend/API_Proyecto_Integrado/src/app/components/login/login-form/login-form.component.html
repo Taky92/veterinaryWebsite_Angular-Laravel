@@ -1,0 +1,17 @@
+<mat-tab-group dynamicHeight class="tab-group">
+
+<!-- Slider del Cliente -->
+  <mat-tab label="Cliente" class="login-label">
+
+    <app-user-form class="user-form" (submitForm)="onSubmitUserForm($event)"></app-user-form>
+
+  </mat-tab>
+
+  <!-- Slider del Veterinario -->
+  <mat-tab label="Veterinario">
+
+    <app-admin-form class="admin-form" (submitForm)="onSubmitAdminForm($event)"></app-admin-form>
+
+  </mat-tab>
+
+</mat-tab-group>

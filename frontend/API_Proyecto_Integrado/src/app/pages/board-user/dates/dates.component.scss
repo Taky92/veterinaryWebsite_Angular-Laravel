@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 50px;
+}
+
+.title .action{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    margin-left: 100px;
+}
+
+.action button {
+    background-color: #73b7cdc6;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h1 {
+    text-shadow: 2px 0px 5px #34343654;
+    text-align: center;
+    color: #7539a7d3;
+    margin-bottom: 20px;
+}
+
+.card-pet {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.datesForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.card-pets__without-dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 15px 0;
+}
+
+.card-pets__without-dates__text {
+    font-size: 1.6em;
+    font-weight: 500;
+    color: #1c98c2;
+    margin: 15px 0;
+}

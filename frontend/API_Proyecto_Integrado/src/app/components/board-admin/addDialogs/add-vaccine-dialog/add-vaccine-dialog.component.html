@@ -1,0 +1,47 @@
+<div class="add-vac-dialog">
+    <h1>Añadir vacuna</h1>
+  
+    <form [formGroup]="addVaccineForm">
+  
+        <!-- Nombre -->
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Vacuna" />
+          <mat-error *ngIf="name?.errors?.['required'] && name?.touched">
+            El nombre de la vacuna es obligatoria
+          </mat-error>
+        </mat-form-field>
+  
+      <!-- StartDate-->
+      <mat-form-field class="datepicker">
+        <div>
+          <input matInput [matDatepicker]="picker1" formControlName="date" placeholder="Fecha de administración" />
+          <mat-datepicker-toggle [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </div>
+        <mat-error *ngIf="date?.errors?.['required'] && date?.touched">
+          La fecha de administración es obligatoria
+        </mat-error>
+      </mat-form-field>
+
+        <!-- EndDate-->
+        <mat-form-field class="datepicker">
+            <div>
+                <input matInput [matDatepicker]="picker2" formControlName="expirationDate" placeholder="Fecha expiración" />
+                <mat-datepicker-toggle [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </div>
+            <mat-error *ngIf="expirationDate?.errors?.['required'] && expirationDate?.touched">
+                La fecha de expiración es obligatoria
+            </mat-error>
+            <mat-error *ngIf="expirationDate?.errors?.['dateError']">
+                La fecha de expiración no puede ser anterior a la fecha de administración
+            </mat-error>
+        </mat-form-field>
+
+      </form>
+  
+      <mat-card-actions>
+        <button class="add-button" mat-button (click)="onAddVaccine()">Añadir vacuna</button>
+        <button class="cancel-button" mat-button (click)="onCancel()">Cancelar</button>
+      </mat-card-actions>
+  </div>  

@@ -1,0 +1,23 @@
+.table-dates-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+mat-paginator {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.table-col {
+    padding: 100px;
+}
+
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+    padding-left: 120px;
+}

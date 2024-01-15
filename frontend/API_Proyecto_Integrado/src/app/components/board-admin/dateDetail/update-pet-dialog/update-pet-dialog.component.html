@@ -1,0 +1,74 @@
+<div class="update-pet-dialog">
+    <h1>Añadir mascota</h1>
+  
+    <form [formGroup]="updatePetForm">
+  
+        <!-- Nombre -->
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Nombre" />
+          <mat-error *ngIf="name?.errors?.['required'] && name?.touched">
+            El nombre es obligatorio
+          </mat-error>
+        </mat-form-field>
+  
+      <!-- Especie -->
+      <mat-form-field>
+        <mat-select formControlName="species" placeholder="Especie">
+            <mat-option *ngFor="let specie of species" [value]="specie.name">
+              {{ specie.value }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="updatePetForm.get('species') !== null">
+            La especie es obligatoria
+          </mat-error>
+      </mat-form-field>
+  
+      <!-- Sexo-->
+      <mat-form-field>
+        <mat-select formControlName="gender" placeholder="Sexo">
+            <mat-option *ngFor="let gender of genders" [value]="gender.name">
+              {{ gender.value }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="updatePetForm.get('gender') !== null">
+            El sexo es obligatorio
+          </mat-error>
+      </mat-form-field>
+  
+      <!-- Birthday-->
+      <mat-form-field class="datepicker">
+        <div>
+          <input matInput [matDatepicker]="picker" formControlName="birthdate" placeholder="Fecha de nacimiento" />
+          <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+        
+        <mat-error *ngIf="birthdate?.errors?.['required'] && birthdate?.touched">
+          La fecha de nacimiento es obligatoria
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Photo-->
+      <mat-form-field>
+        <input matInput formControlName="photo" placeholder="Imagen de perfil" type="text" />
+      </mat-form-field>
+
+      <!-- Veterinary-->
+      <mat-form-field>
+        <mat-select formControlName="veterinary" placeholder="Veterinario">
+            <mat-option *ngFor="let veterinary of veterinaries" [value]="veterinary.idVeterinary">
+              {{ veterinary.name + ' ' + veterinary.surname }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="updatePetForm.get('veterinary')?.hasError('min')">
+            El Veterinario es obligatorio
+          </mat-error>
+      </mat-form-field>
+
+      </form>
+  
+      <mat-card-actions>
+        <button class="update-button" mat-button (click)="onUpdatePet()">Guardar cambios</button>
+        <button class="cancel-button" mat-button (click)="onCancel()">Cancelar</button>
+      </mat-card-actions>
+  </div>  

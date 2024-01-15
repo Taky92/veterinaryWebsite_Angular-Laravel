@@ -1,0 +1,8 @@
+<h1>Vacunas de {{petName}}</h1>
+<app-vaccines-admin-table class="vac-table" [vaccineList]="vaccineList"></app-vaccines-admin-table>
+
+<div class="actions">
+    <button mat-raised-button (click)="goBack()">Volver</button>
+
+    <button mat-raised-button (click)="addVaccine()">Añadir vacuna</button>
+</div>

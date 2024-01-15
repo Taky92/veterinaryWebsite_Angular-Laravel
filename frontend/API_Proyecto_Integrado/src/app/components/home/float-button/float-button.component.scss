@@ -1,0 +1,24 @@
+button {
+    position: fixed;
+    bottom: 250px;
+    right: 50px;
+}
+
+.float-button{
+    background-color: #bd91e071;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.float-icon{
+    color: #7539a7d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+    width: 40px;
+    height: 40px;
+}

@@ -1,0 +1,31 @@
+.confirm-dialog{
+    background-color: #f747475e;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+
+.confirm-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 20px 10px;
+}
+
+mat-dialog-actions{
+    justify-content: center;
+}
+
+.confirm-button{
+    background-color: #73b7cdce;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.cancel-button{
+    background-color: rgba(204, 18, 18, 0.583);
+    border: 1px solid black;
+    font-size: 1em;
+    font-weight: bold;
+    color: #ffffff;
+}

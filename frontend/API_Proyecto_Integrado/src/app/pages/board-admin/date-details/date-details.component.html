@@ -1,0 +1,13 @@
+<div class="title">
+    <div class="action">
+        <button mat-raised-button (click)="goBack()">Volver</button>
+    </div>
+    <h1>Cita de {{pet.name}}</h1>
+</div>
+<div class="details">
+    <div class="details-card">
+        <app-card-user class="card-user" [user]="user" (addPetClick)="addPet($event)"></app-card-user>
+        <app-card-patient class="card-pet" [date]="date" [pet]="pet" (updatePetClick)="updatePet($event)" (deletePetClick)="deletePet()"></app-card-patient>
+    </div>
+    <app-card-date-details class="card-date" [date]="date"></app-card-date-details>
+</div>   

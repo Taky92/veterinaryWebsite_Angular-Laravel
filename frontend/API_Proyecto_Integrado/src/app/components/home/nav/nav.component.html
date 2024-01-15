@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <div class="logo-navbar">
+    <img src="../../../assets/logo/logo2-SinFondo.png" alt="logo" width="130px" height="100"/>
+    <p>Porque su bienestar es nuestra prioridad</p>
+  </div>
+
+  <div class="nav-pages">
+    <span>
+      <a [routerLink]="['/home']" >Inicio</a>
+    </span>
+    <span>
+      <a (click)="scrollTo('benefits')">Servicios</a>
+    </span>
+    <span>
+      <a (click)="scrollTo('aboutUs')">Nosotros</a>
+    </span>
+    <span>
+      <a (click)="scrollTo('contact')">Contacto</a>
+    </span>
+  </div>
+
+  <app-menu></app-menu>
+  
+</mat-toolbar>

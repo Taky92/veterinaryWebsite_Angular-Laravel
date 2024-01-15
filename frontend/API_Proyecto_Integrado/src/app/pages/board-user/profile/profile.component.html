@@ -1,0 +1,12 @@
+<div class="profile" >
+    <app-card-owner class="card-owner" [user]="user" (editProfileClick)="editProfile($event)" (dropOutClick)="dropOut()"></app-card-owner>
+    <ng-container class="card-pets" *ngIf="pets.length !== 0; else withOutPets">
+        <app-card-pet class="card-pet" *ngFor="let pet of pets" [pet]="pet"></app-card-pet>
+    </ng-container>
+    <ng-template #withOutPets>
+        <div class="card-pets__without-pets">
+            <h3 class="card-pets__without-pets__text">No tienes mascotas registradas</h3>
+        </div>
+    </ng-template>
+</div>
+

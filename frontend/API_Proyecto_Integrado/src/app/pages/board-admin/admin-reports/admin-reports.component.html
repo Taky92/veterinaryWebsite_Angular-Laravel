@@ -1,0 +1,8 @@
+<h1>Informes de {{petName}}</h1>
+<app-reports-admin-table class="rep-table" [reportList]="reportList"></app-reports-admin-table>
+
+<div class="actions">
+    <button mat-raised-button (click)="goBack()">Volver</button>
+
+    <button mat-raised-button (click)="addReport()">Añadir informe</button>
+</div>

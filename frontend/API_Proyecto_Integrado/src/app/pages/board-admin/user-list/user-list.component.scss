@@ -1,0 +1,58 @@
+.accordion {
+    width: 70%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+mat-form-field {
+    margin: 0;
+}
+
+.title .filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 35%;
+    height: 100%;
+    margin: 0;
+}
+
+.title .filter input {
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.title .action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    margin-left: 100px;
+}
+
+.action button {
+    background-color: #73b7cdc6;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h1 {
+    text-shadow: 2px 0px 5px #34343654;
+    color: #7539a7d3;
+    margin: 0;
+}

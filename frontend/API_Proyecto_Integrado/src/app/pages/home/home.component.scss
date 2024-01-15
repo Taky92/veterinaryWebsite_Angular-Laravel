@@ -1,0 +1,48 @@
+.app-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.app-benefit {
+    height: 100%;
+    width: 100%;
+}
+
+.about-us{
+    background-color: #73b7cd7a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.about-us-title-text{
+    text-shadow: 2px 0px 5px #34343654;
+    color: #7539a7d3;
+    margin: 0;
+}
+
+.about-us-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 0 10%;
+}
+
+.about-us-content p{
+    text-shadow: 2px 0px 5px #34343654;
+    color: white;
+    font-weight: 500;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.app-footer{
+    width: 100%;
+    height: 80%;
+}

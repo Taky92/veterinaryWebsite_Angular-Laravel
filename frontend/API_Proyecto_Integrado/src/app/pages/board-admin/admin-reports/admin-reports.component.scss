@@ -1,0 +1,27 @@
+* {
+    margin-top: 50px;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 2px 0px 5px #34343654;
+    color: #7539a7d3;
+}
+
+.rep-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.actions button{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 5px;
+}

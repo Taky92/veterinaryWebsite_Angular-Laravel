@@ -1,0 +1,30 @@
+<div class="card">
+    <mat-card class="card-user">
+        <div class="card-header">
+            <mat-card-header class="header-title">
+                <mat-card-title class="card-title">PROPIETARIO</mat-card-title>
+            </mat-card-header>
+            <hr size="2px" color="purple">
+        </div>
+        <div class="card-body">
+            <div class="card-image">
+                <ng-container class="image-user" *ngIf="user.photo !== 'user.png'; else photoDefault">
+                    <img mat-card-image src={{user.photo}} alt="Photo User">
+                </ng-container>
+                <ng-template class="image-user" #photoDefault>
+                    <img mat-card-image src="./../../../../assets/images/user.png" alt="Photo User">
+                </ng-template>
+            </div>
+
+            <mat-card-content class="card-content">
+                <span> <strong>Nombre:</strong> {{user.name + ' ' + user.surname}}</span>
+                <span> <strong>Correo:</strong> {{user.email}}</span>
+                <span> <strong>Telefono:</strong> {{user.phone}}</span>
+            </mat-card-content>
+            
+            <mat-card-actions class="card-actions">
+              <button mat-button (click)="onAddPet(user.idUser)">Añadir mascota</button>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>

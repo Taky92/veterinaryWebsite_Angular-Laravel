@@ -1,0 +1,36 @@
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-political">
+            <div class="footer-logo">
+                <img src="../../../assets/logo/logo2-SinFondo.png" alt="logo">
+            </div>
+            <div class="political">
+                <span class="political-text">Política de privacidad</span>
+                <span class="political-text">Términos y condiciones</span>
+            </div>
+        </div>
+        <div class="footer-contacts">
+            <span><strong>Teléfono: </strong> +57 300 123 4567</span>
+            <span><strong>Urgencias: </strong>+57 300 123 4562</span>
+            <span><strong>Correo: </strong>contacto@petcare.com</span>
+        </div>
+        <div class="footer-social">
+            <div class="footer-social-content">
+                <span>Síguenos en:</span>
+                <div class="footer-social-icons">
+                    <button mat-icon-button *ngFor="let icon of icons">
+                        <img mat-icon [src]="icon.image" [alt]="icon.alt">
+                    </button>
+                </div>
+            </div>
+
+            <span>Calle El Soldado, 23 (29590) Málaga</span>
+        </div>
+        <div class="footer-localization">
+            <div class="footer-map">
+                <img src="/assets/images/footer/localización.png" alt="ubicacion">
+            </div>
+        </div>
+
+    </div>
+</div>

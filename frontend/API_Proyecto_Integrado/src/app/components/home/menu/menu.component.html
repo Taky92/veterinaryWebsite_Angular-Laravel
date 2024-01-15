@@ -1,0 +1,67 @@
+<div class="nav-menu">
+  <!-- Si está logeado y autenticado -->
+  <ng-container *ngIf="authenticated; else noAuthenticate">
+
+    <!-- Si está logeado y es de tipo usuario -->
+    <ng-container *ngIf="userType === 'user'">
+
+      <button
+      style="width: 50px; height: 50px"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      >
+        <mat-icon style="font-size: 1.2em">menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/user']">
+          <mat-icon>pets</mat-icon>
+          <span>Perfil</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu> 
+
+    </ng-container>
+
+    <!-- Si está logeado y es de tipo admin -->
+    <ng-container *ngIf="userType === 'admin' ">
+
+      <button
+      style="width: 50px; height: 50px"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      >
+        <mat-icon style="font-size: 1.2em">menu</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['admin']">
+          <mat-icon>event_note</mat-icon>
+          <span>Citas</span>
+        </button>
+        <button mat-menu-item [routerLink]="['admin/userList']">
+          <mat-icon>contacts</mat-icon>
+          <span>Lista de usuarios</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
+    </ng-container>
+  </ng-container>
+
+  <!-- Si no está logeado -->
+  <ng-template #noAuthenticate class="no-register">
+    <button mat-button class="register" [routerLink]="['/register']">
+      Registrarse
+    </button>
+    <button mat-icon-button class="botton-user" [routerLink]="['/login']">
+      <mat-icon class="user">account_circle</mat-icon>
+    </button>
+  </ng-template>
+</div>

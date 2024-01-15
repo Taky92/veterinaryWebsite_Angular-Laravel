@@ -1,0 +1,8 @@
+<h1>Medicación de {{petName}}</h1>
+<app-medicaments-admin-table class="med-table" [medicationList]="medicationList"></app-medicaments-admin-table>
+
+<div class="actions">
+    <button mat-raised-button (click)="goBack()">Volver</button>
+
+    <button mat-raised-button (click)="addMedicament()">Añadir medicamento</button>
+</div>

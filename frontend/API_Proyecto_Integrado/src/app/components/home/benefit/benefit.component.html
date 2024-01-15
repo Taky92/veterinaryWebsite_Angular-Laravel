@@ -1,0 +1,16 @@
+<div class="benefit">
+    <h1>Servicios</h1>
+    <div class="benefit-content">
+        <div class="card-benefit" *ngFor="let card of cards; let i = index">
+            <!-- CARD -->
+            <mat-card class="benefit-card" [ngClass]="{'even': i < 4}">
+                <img mat-icon [src]="card.image">
+                <mat-card-content class="benefit-card-title">
+                  <h2>
+                    {{card.title}}
+                  </h2>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card">
+    <mat-card class="card-date">
+        <div class="card-header">
+            <mat-card-header class="header-title">
+                <mat-card-title class="card-title">DATOS DE LA CITA</mat-card-title>
+            </mat-card-header>
+            <hr size="2px" color="purple">
+        </div>
+        <div class="card-body">
+            <mat-card-content class="card-content">
+                <span> <strong>Fecha:</strong> {{date.date}} </span>
+                <span> <strong>Hora:</strong> {{date.time}} </span>
+                <span> <strong>Asunto:</strong> {{date.reason}} </span>
+            </mat-card-content>
+            
+            <mat-card-actions class="card-actions">
+              <button mat-button (click)="goToMedicaments(date.idPet)">Medicación</button>
+              <button mat-button (click)="goToReports(date.idPet)">Informes</button>
+              <button mat-button (click)="goToVaccines(date.idPet)">Vacunas</button>
+            </mat-card-actions>
+        </div>
+    </mat-card>
+</div>

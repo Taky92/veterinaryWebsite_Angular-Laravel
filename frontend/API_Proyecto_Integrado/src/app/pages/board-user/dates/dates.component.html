@@ -1,0 +1,13 @@
+<div class="title">
+    <div class="action">
+        <button mat-raised-button (click)="goBack()">Volver</button>
+    </div>
+    <h1>Citas Previas</h1>
+</div>
+<ng-container class="pet-dates" *ngIf="petsWithDates.length > 0; else withOutDates">
+    <app-card-pet-dates class="card-pet" *ngFor="let pet of petsWithDates" [pet]="pet" (datedropped)="onDateDeleted($event)"></app-card-pet-dates>
+</ng-container>
+<ng-template #withOutDates class="card-pets__without-dates">
+    <h2 class="card-pets__without-dates__text">No tienes citas actualmente</h2>
+</ng-template>
+<app-dates-form [pets]="pets" [petsWithDates]="petsWithDates" (dateAdded)="onDateAdded($event)" class="datesForm"></app-dates-form>

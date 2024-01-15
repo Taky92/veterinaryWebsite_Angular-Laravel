@@ -1,0 +1,70 @@
+<div class="update-dialog">
+  <h1>Editar perfil</h1>
+
+    <form [formGroup]="editForm">
+
+      <!-- Nombre -->
+      <mat-form-field>
+        <input matInput formControlName="name" placeholder="Nombre" />
+        <mat-error *ngIf="name?.errors?.['required'] && name?.touched">
+          El nombre es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Apellidos-->
+      <mat-form-field>
+          <input matInput formControlName="surname" placeholder="Apellidos" />
+          <mat-error *ngIf="surname?.errors?.['required'] && surname?.touched">
+              Los apellidos son obligatorios
+          </mat-error>
+      </mat-form-field>
+
+      <!-- Email-->
+      <mat-form-field>
+          <input matInput formControlName="email" placeholder="Email" />
+          <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+              El email es obligatorio
+          </mat-error>
+          <mat-error *ngIf="email?.errors?.['email']">
+              El formato del email no es correcto
+          </mat-error>
+      </mat-form-field>
+
+      <!-- Phone-->
+      <mat-form-field>
+          <input matInput formControlName="phone" placeholder="Teléfono" />
+          <mat-error *ngIf="phone?.errors?.['required'] && phone?.touched">
+              El teléfono es obligatorio
+          </mat-error>
+          <mat-error *ngIf="phone?.errors?.['pattern']">
+              El teléfono debe tener 9 dígitos
+          </mat-error>
+      </mat-form-field>
+
+      <!-- Birthday-->
+      <mat-form-field class="datepicker">
+        <div>
+          <input matInput [matDatepicker]="picker" formControlName="birthdate" placeholder="Fecha de nacimiento" />
+          <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+        
+        <mat-error *ngIf="birthdate?.errors?.['required'] && birthdate?.touched">
+          La fecha de nacimiento es obligatoria
+        </mat-error>
+        <mat-error *ngIf="birthdate?.errors?.['underage'] && !birthdate?.errors?.['required']">
+          Deber ser mayor de edad
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Photo-->
+      <mat-form-field>
+        <input matInput formControlName="photo" placeholder="Imagen de perfil" type="text" />
+      </mat-form-field>
+    </form>
+
+    <mat-card-actions>
+      <button class="save-button" mat-button (click)="onSaveChanges()">Guardar cambios</button>
+      <button class="cancel-button" mat-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+</div>  

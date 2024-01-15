@@ -1,0 +1,49 @@
+    @startuml CasosDeUso
+
+    title PetCare
+
+    :Veterinario: --> (Inicio)
+    :Veterinario: --> (Login)
+    :Veterinario: --> (Logout)
+    :Veterinario: --> (Ver perfil Cliente)
+    :Veterinario: --> (Dar de baja Cliente)
+    :Veterinario: --> (Ver perfil mascota)
+    :Veterinario: --> (Ver informes mascota)
+    :Veterinario: --> (Ver vacunas mascota)
+    :Veterinario: --> (Ver medicación mascota)
+    :Veterinario: --> (Solicitar cita)
+    :Veterinario: --> (Cancelar cita)
+
+    :Veterinario: -up-> (Añadir mascota)
+    :Veterinario: -up-> (Dar de baja mascota)
+    :Veterinario: -up-> (Editar perfil mascota)
+    :Veterinario: -up-> (Añadir informe mascota)
+    :Veterinario: -up-> (Editar informe mascota)
+    :Veterinario: -up-> (Borrar informe mascota)
+    :Veterinario: -up-> (Añadir vacuna mascota)
+    :Veterinario: -up-> (Editar vacuna mascota)
+    :Veterinario: -up-> (Borrar vacuna mascota)
+    :Veterinario: -up-> (Añadir medicación mascota)
+    :Veterinario: -up-> (Editar medicación mascota)
+    :Veterinario: -up-> (Borrar medicación mascota)
+    :Veterinario: -up-> (Ver todas las citas)
+
+    left to right direction
+
+    :Cliente: -up->(Inicio)
+    :Cliente: -up->(Login)
+    :Cliente: -up->(Logout)
+    :Cliente: -up->(Ver perfil Cliente)
+    :Cliente: -up->(Dar de baja Cliente)
+    :Cliente: -up->(Ver perfil mascota)
+    :Cliente: -up->(Ver informes mascota)
+    :Cliente: -up->(Ver vacunas mascota)
+    :Cliente: -up->(Ver medicación mascota)
+    :Cliente: -up->(Solicitar cita)
+    :Cliente: -up->(Cancelar cita)
+
+    :Cliente: -->(Registrarse)
+    :Cliente: -->(Editar perfil Cliente)
+    :Cliente: -->(Ver citas mascotas)
+
+    @enduml

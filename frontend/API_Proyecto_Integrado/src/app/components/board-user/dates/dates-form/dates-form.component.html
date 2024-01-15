@@ -1,0 +1,74 @@
+<div class="dates mat-elevation-z4">
+
+    <!-- Card del cliente -->
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>Solicitar Cita</h2>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+      <!-- Formulario del cliente -->
+        <form [formGroup]="datesForm" (submit)="onSubmit()">
+
+        <!-- Dates-->
+        <mat-form-field class="datepicker">
+          <div>
+            <input matInput [matDatepicker]="picker" formControlName="dates" placeholder="Fecha" />
+            <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </div>
+          
+          <mat-error *ngIf="dates?.errors?.['required'] && dates?.touched">
+            La fecha de la cita es obligatoria
+          </mat-error>
+          <mat-error *ngIf="dates?.errors?.['underage'] && !dates?.errors?.['required']">
+            No puedes seleccionar una fecha anterior a hoy
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Pets -->
+        <ng-container *ngIf="datesForm.get('dates')?.valid">
+          <mat-form-field>
+            <mat-select formControlName="mascot" placeholder="Mascota">
+              <mat-option *ngFor="let pet of availablePets" [value]="pet.idPet">
+                {{ pet.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="datesForm.get('mascot')?.hasError('min') && availablePets.length > 0">
+              La mascota es obligatoria
+            </mat-error>
+            <mat-error *ngIf="availablePets.length === 0">
+              Todas las mascotas tienen citas
+            </mat-error>
+
+          </mat-form-field>
+        </ng-container>
+
+        <!-- Times -->
+        <ng-container *ngIf="datesForm.get('mascot')?.value !== 0 && datesForm.get('dates')?.valid ">
+        <mat-form-field>
+            <mat-select formControlName="times" placeholder="Hora">
+                <mat-option *ngFor="let hour of hours; let i = index" [value]="hour">
+                    {{ hour }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </ng-container>
+
+        <!-- Reason-->
+        <mat-form-field>
+            <input matInput formControlName="reason" placeholder="Asunto"/>
+        </mat-form-field>
+
+        <mat-card-actions>
+          <button mat-button type="submit">Solicitar Cita</button>
+        </mat-card-actions>
+
+        </form>
+
+      </mat-card-content>
+
+    </mat-card>
+  </div>

@@ -1,0 +1,68 @@
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 50px;
+}
+
+.title .action{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    margin-left: 100px;
+}
+
+.action button {
+    background-color: #73b7cdc6;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h1 {
+    text-shadow: 2px 0px 5px #34343654;
+    color: #7539a7d3;
+    margin: 0;
+}
+
+details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.details-card{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.card-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 15px 0;
+}
+.card-pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 15px 0;
+}
+
+.card-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}

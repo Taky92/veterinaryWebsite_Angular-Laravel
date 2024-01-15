@@ -1,0 +1,37 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let user of userList" 
+                        (opened)="loadPets(user.idUser, phoneFilter)"
+                        (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{user.name + ' ' + user.surname}}
+        </mat-panel-title>
+        <mat-panel-description>
+            {{user.phone}}
+        </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="accordion-content">
+            <button mat-button class="add-button" (click)="onAddPet(user.idUser)">Añadir mascota</button>
+            
+            <ng-container *ngIf="pets && pets.length > 0">
+                <form [formGroup]="selectPetForm">
+                    <mat-form-field>
+                        <mat-select placeholder="Mascota" formControlName="pet">
+                            <mat-option *ngFor="let pet of pets" [value]="pet.idPet">
+                                {{pet.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="selectPetForm.get('pet')?.hasError('required')">
+                            La mascota es obligatoria
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+                <div class="actions">
+                    <button mat-button [disabled]="!selectPetForm.valid" (click)="goToMedicaments()" >Medicación</button>
+                    <button mat-button [disabled]="!selectPetForm.valid" (click)="goToReports()" >Informes</button>
+                    <button mat-button [disabled]="!selectPetForm.valid" (click)="goToVaccines()" >Vacunas</button>
+                </div>
+            </ng-container>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

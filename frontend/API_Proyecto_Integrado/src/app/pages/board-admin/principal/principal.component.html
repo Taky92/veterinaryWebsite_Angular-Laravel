@@ -1,0 +1,10 @@
+<div class="date-list">
+    <h1>Citas del veterinario/a {{veterinaryName}}</h1>
+    <ng-container class="pet-dates" *ngIf="datesList.length > 0; else withOutDates">
+        <app-table-dates class="date-table" [dates]="datesList"></app-table-dates>
+    </ng-container>
+    <ng-template #withOutDates class="card-pets__without-dates">
+        <h2 class="card-pets__without-dates__text">No tienes citas actualmente</h2>
+    </ng-template>
+    <app-dates-admin-form [vetId]="veterinaryId" (dateAdded)="onDateAdded($event)" class="datesForm"></app-dates-admin-form>
+</div>

@@ -1,0 +1,61 @@
+.dates {
+    width: 30%;
+    margin: 20px 0;
+}
+
+mat-card {
+    background-color: #73b7cd41;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+mat-card-title {
+    text-shadow: 2px 0px 5px #34343654;
+    color: #7539a7d3;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+mat-form-field {
+    font-size: 1.1em;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.datepicker div {
+    display: flex;
+}
+
+mat-card-actions button {
+    background-color: #73b7cd;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}

@@ -1,0 +1,38 @@
+<div class="login-user mat-elevation-z4">
+
+    <!-- Card del cliente -->
+    <mat-card>
+
+      <mat-card-content>
+      <!-- Formulario del cliente -->
+        <form [formGroup]="loginUser" (ngSubmit)="onSubmit()">
+
+          <!-- Numero de Socio-->
+          <mat-form-field>
+            <input matInput formControlName="email" placeholder="Email" />
+            <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
+              El email es obligatorio
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+              El email no es válido
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Contraseña -->
+          <mat-form-field>
+            <input matInput formControlName="password" placeholder="Contraseña" type="password" />
+            <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
+              La contraseña es obligatoria
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions>
+            <button mat-button type="submit">Acceder</button>
+          </mat-card-actions>
+
+        </form>
+
+      </mat-card-content>
+      
+    </mat-card>
+  </div>
